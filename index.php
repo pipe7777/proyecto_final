@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-
-    </head>
-    <body>
-      <header>
-        <nav class="navbar navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">PHP CURSO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Nosotros</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    contactanos
-                  </a>
-                 
-                </li>
-               
-              </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-light" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        </nav>
-        </nav>
-
-
-       </header>
+<?php include "Layout/Layout.php"?>
       
         <div class="container"> 
           <div class="row">
@@ -137,6 +91,7 @@
 
 
    <!-- Button trigger modal -->
+    <div class ="col text-center">
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
@@ -150,21 +105,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-      <?php
-      include_once "Controller/Conexion.php";
-      $conexion = new Conexion();
-      $conexion = $conexion->conectar();
-      if ($conexion) {
-        $sql = "SELECT * FROM registropersonas";
-        $consulta=$conexion->prepare($sql);
-        $consulta->execute();
-        $i = 0;
-        while($fila=$consulta-> fetch(PDO:: FETCH_ASSOC)){
-          $i += 1;
-        
-      ?>
-        
 <table class="table table-dark table-striped">
   
   <thead>
@@ -181,17 +121,32 @@
 
     </tr>
   </thead>
+      <?php
+      include_once "Controller/Conexion.php";
+      $conexion = new Conexion();
+      $conexion = $conexion->conectar();
+      if ($conexion) {
+        $sql = "SELECT * FROM registropersonas";
+        $consulta=$conexion->prepare($sql);
+        $consulta->execute();
+        $i = 0;
+        while($fila=$consulta-> fetch(PDO:: FETCH_ASSOC)){
+          $i += 1;
+        
+      ?>
+        
+
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <th scope="row"><?php $i?></th>
+      <td><?php echo $fila["Nombre"];?></td>
+      <td><?php echo $fila["Apellido"];?></td>
+      <td><?php echo $fila["Edad"];?></td>
+      <td><?php echo $fila["Correo"];?></td>
+      <td><?php echo $fila["Telefono"];?></td>
+      <td><a href="Update.php" type="button" class="btn btn-success">Editar</a></td>
+      <td></td>
+      
 
 
     </tr>
