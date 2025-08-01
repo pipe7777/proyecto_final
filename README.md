@@ -8,7 +8,7 @@ Tecnologias empleadas
 -javaScript 
 ideal para proyectos que requieren gestion de usuarios, productos o cualquier tipo de datos estructurados. incluye conexion con bases de datos, validacion basica y visualizacion inmediata, facil de adaptar, escalar y personalizar según necesidades especificas.
 
-
+´´´Sql
 
 #backup base de datos
 
