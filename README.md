@@ -1,3 +1,17 @@
+#FELIPE MARIN FERNANDEZ
+#sitema de registro  con formulario y bases de datos
+#Este repositorio presenta una implementación sencilla pero efectiva de un sistema de registro mediante formulario, con integración directa a una bases de datos. Al ingresar datos en el formulario, estos se almacenan automáticamente y se reflejan en una tabla dinámica con confirmacion de éxito (launch demo modal).
+Tecnologias empleadas
+-HTML/ PHP
+-MySQL
+-Boostrap
+-javaScript
+ideal para proyectos que requieren gestion de usuarios, productos o cualquier tipo de datos estructurados. incluye conexion con bases de datos, validacion basica y visualizacion inmediata, facil de adaptar, escalar y personalizar según necesidades especificas.  
+
+
+
+
+
 ```sql
 
 -- phpMyAdmin SQL Dump
