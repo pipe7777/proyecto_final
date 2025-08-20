@@ -32,34 +32,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
-   <form action="Controller/Registro.php" method="POST">
-
-    <div class="row">
-      <div class="col">
-          <input type="text" class="form-control" placeholder="Ingrese tu nombre" name="nombre">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Ingrese tu Apellido" name="apellido">
-
-      </div>
-
-      <div class="row">
-            <div class="col">
-          <input type="text" class="form-control" placeholder="Ingrese tu documento" name=id>
-      </div>
-      <div class="col">
-        <input type="email" class="form-control" placeholder="Ingrese tu correo" name="correo">
-    </div>
-    <div class="row">
-      <div class="col">
-          <input type="text" class="form-control" placeholder="Ingrese tu edad" name="edad">
-      </div>
-       <div class="col">
-        <input type="text" class="form-control" placeholder="Ingrese tu telefono" name="tel">
-    </div>
-    </div>
-    <button>registrarse<button>
-   </form>
+   
 
     <!-- Modal genérico -->
 <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
@@ -144,14 +117,14 @@
       <td><?php echo $fila["Edad"];?></td>
       <td><?php echo $fila["Correo"];?></td>
       <td><?php echo $fila["Telefono"];?></td>
-      <td><a href="Update.php" type="button" class="btn btn-success">Editar</a></td>
+      <td><a href="Update.php?id=<?php echo $fila["Id"]?>" type="button" class="btn btn-success">Editar</a></td>
+      <td><a href="Controller/DeleteController.php?id=<?php echo $fila["Id"]?>" type="button" class="btn btn-danger">Eliminar</a></td>
       <td></td>
       
 
 
     </tr>
 
-   
   </tbody>
 <?php
 }}
@@ -172,6 +145,7 @@ else {
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>
