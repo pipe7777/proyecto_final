@@ -155,6 +155,35 @@ else {
 
     </body>
 
+    <form action="Controller/Registro.php" method="POST">
+
+    <div class="row">
+      <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+
+      </div>
+
+      <div class="row">
+            <div class="col">
+<input type="text" class="form-control" placeholder="id" name="id" >
+      </div>
+      <div class="col">
+        <input type="email" class="form-control" placeholder="Correo" name="correo">
+    </div>
+    <div class="row">
+      <div class="col">
+          <input type="text" class="form-control" placeholder="Edad" name="edad">
+      </div>
+       <div class="col">
+        <input type="text" class="form-control" placeholder="Telefono" name="tel">
+    </div>
+    </div>
+    <button>registrarse<button>
+   </form>
+
     
 
 
